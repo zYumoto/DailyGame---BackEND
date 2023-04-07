@@ -56,3 +56,7 @@ fieldset .campo{
     position: absolute;
     clip: rect(0);
   }
+
+.random-img{
+    filter: blur(5px);
+}
