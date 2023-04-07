@@ -17,9 +17,85 @@
         <img>
         <img id="randomImg" class= "randomImg" src="" alt="Imagem aleatória">
         <div class="campo">
-            <label>Nome do streamer</label>
-            <input type="text" name="tentativa" id="tentativa">
-            <button onclick="enviar()">TENTAR</button>
+            <label>Streamers:</label>
+            <input list="opcoesStreamer" id="tentativa">
+            <datalist id="opcoesStreamer">
+                <option value="4lan">4lan (LOL)</option>
+                <option value="Adolfz">AdolfZz</option>
+                <option value="Axtlol">AXT</option>
+                <option value="Ayel">Ayel</option>
+                <option value="Bianquinha">Bianquinha182</option>
+                <option value="BlackOutz">Blackoutz</option>
+                <option value="Boo">Boo Unzueta (Pod Delas)</option>
+                <option value="BRTT">BRTT</option>
+                <option value="Bueirinho">Bueirinho LOL</option>
+                <option value="Cellbit">Cellbit</option>
+                <option value="Cerol">Cerol Fluxo</option>
+                <option value="Chris Paiva">Chris Paiva (Vênus)</option>
+                <option value="CSR">CSR</option>
+                <option value="Daniels">Daniels</option>
+                <option value="Defante">Diogo Defante</option>
+                <option value="DMenor11">DMenor11</option>
+                <option value="Fir3zera">Fir3zera</option>
+                <option value="Fnx">Lincoln lau (Fnx)</option>
+                <option value="gragolandia2">Gragolândia</option>
+                <option value="Gratis150ml">Gratis 150Ml</option>
+                <option value="Hastaad">Hastad</option>
+                <option value="Hayshii">Hayashii</option>
+                <option value="hudsonamorim">Hudson Amorim</option>
+                <option value="IShowSpeed">Ishow Speed</option>
+                <option value="JeanMago">Jean Mago</option>
+                <option value="jovirone">Jovirone</option>
+                <option value="kami">KamiKat</option>
+                <option value="Kant">Kant</option>
+                <option value="Kenzy">Kennzy</option>
+                <option value="Kinechan">Kinechan</option>
+                <option value="Krikor">Krikor (GM xadrez)</option>
+                <option value="Lffreitas">Luis Felipe Freitas (LFF)</option>
+                <option value="Liminha">Liminha</option>
+                <option value="Loud Mi">Loud_Miih</option>
+                <option value="Loud Voltan">Loud_Voltan</option>
+                <option value="Luba">LubaTV</option>
+                <option value="Maitê">Maethe</option>
+                <option value="Mch">Mch_agg</option>
+                <option value="mucalol">MucaLOL (SmurfdoMuca)</option>
+                <option value="nicklink">Nicklink</option>
+                <option value="Nicole diretora">Nicole diretora</option>
+                <option value="NineXT">NineXT</option>
+                <option value="Ninja Poderosos">Poderosíssimo Ninja</option>
+                <option value="Ninja">Ninja (Fortnite)</option>
+                <option value="Okina">Okina</option>
+                <option value="Paivinha">Paivinha</option>
+                <option value="Patife">Patife</option>
+                <option value="PATO PAPAO">Pato Papão</option>
+                <option value="Patriota">Patriota</option>
+                <option value="pijack">Pijack</option>
+                <option value="Pulga">PulgaBOY</option>
+                <option value="Rakin">Rakiin</option>
+                <option value="Rbiana">Rbiana</option>
+                <option value="Seven">Seven</option>
+                <option value="Skipinho">Skipnho</option>
+                <option value="Snopey">Snopey</option>
+                <option value="Souzasoul">Souza Soul</option>
+                <option value="Tecnosh">Tecnosh</option>
+                <option value="Thurzin">Thurziin</option>
+                <option value="TonyBOY">TonyBOY</option>
+                <option value="VelhoVamp">VelhoVamp (VvV)</option>
+                <option value="VikingofSouth">Viking of South</option>
+                <option value="WndelLira">Wendel Lira</option>
+                <option value="XandãoOGOD">Super Xandão (XandãoOGOD)</option>
+                <option value="Yasmin Yassini">Yasmin Yassine (Vênus)</option>
+                <option value="yayahuz">Yayahuz</option>
+                <option value="Yetz">Yetz</option>
+                <option value="yulla">Yulla</option>
+                
+            </datalist>
+            <button id="enviar" style="display:block" onclick="enviar()">TENTAR</button>
+        </div>
+        <div class = "resultado">
+                <label class="certo">VOCÊ ACERTOU!!!</label>
+                <label class="errado">VOCÊ ERROOOOUU!!!</label>
+
         </div>
     </fieldset>
     <script src="script.js"></script>

@@ -110,11 +110,13 @@ function trocarImagem() {
 function pararIntervalo() {
   clearInterval(intervalId);
 }
-var decremento = 10;
-let blurAtual = 50;
+var decremento = 5;
+let blurAtual = 25;
 let inputValue = document.getElementById("tentativa").value;
+let count = 0;
 
 function enviar(){
+  count++
     let inputValue = document.getElementById("tentativa").value;
   
       if(!verificarString(inputValue, nImagens)){
@@ -126,6 +128,20 @@ function enviar(){
               blurAtual = 50;
           }
       img.style.filter = `blur(${novoBlur}px)`;
+  }
+  else{
+    document.getElementById("enviar").style.display = "none";
+    document.querySelector('.certo').style.display = "block";
+  }
+
+  
+  if(count == 5){
+    console.log("Entrou")
+    document.getElementById("enviar").style.display = "none";
+    document.querySelector('.errado').style.display = "block";
+  }
+  else{
+    console.log("Passou")
   }
 }
 
@@ -150,8 +166,6 @@ function enviar(){
       return false;
     }
   }
-
-
 
   
   
