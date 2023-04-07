@@ -132,6 +132,7 @@ function enviar(){
   else{
     document.getElementById("enviar").style.display = "none";
     document.querySelector('.certo').style.display = "block";
+    img.style.filter = `blur(0px)`;
   }
 
   
