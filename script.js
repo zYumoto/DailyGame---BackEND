@@ -71,15 +71,33 @@
     ];
 
     
-    var img = document.getElementById("random-img");
-    img.src = "fotos/4lan.jpg"
-  
-    let intervalId = setInterval(function trocarImagem() {
-  
-      var indice = Math.floor(Math.random() * imagens.length);
-      img.src = imagens[indice];
+var img = document.getElementById("random-img");
+img.src = "fotos/4lan.jpg";
 
-    }, 2000);
+var jaFoi = [];
+
+var intervalId = setInterval(trocarImagem, 2000);
+
+function trocarImagem() {
+  var indice = Math.floor(Math.random() * imagens.length);
+  img.src = imagens[indice];
+
+  if (jaFoi.includes(imagens[indice])) {
+    trocarImagem();
+  } else {
+    jaFoi.push(imagens[indice]);
+  }
+
+  console.log(jaFoi);
+
+  if(jaFoi.length == imagens.length){
+    jaFoi = ["fotos/4lan.jpg"]
+  }
+}
+
+function pararIntervalo() {
+  clearInterval(intervalId);
+}
   
   
   
