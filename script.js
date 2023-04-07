@@ -1,74 +1,85 @@
-// Replace YOUR_CLIENT_ID with your Google API Client ID
-var clientId = '13480222500-sr5eg8g98bqn1s1mu3tslee4s86okc5e.apps.googleusercontent.com';
+ // Lista de URLs das imagens
+ var imagens = [
+    "fotos/4lan.jpg",
+    "fotos/Adolfz.jpg",
+    "fotos/Axtlol.jpg",
+    "fotos/Ayel.jpg",
+    "fotos/Bianquinha.jpg",
+    "fotos/BlackOutz.jpg",
+    "fotos/Boo.jpg",
+    "fotos/BRTT.jpg",
+    "fotos/Bueirinho.jpg",
+    "fotos/Cellbit.jpg",
+    "fotos/Cerol.jpg",
+    "fotos/Chris Paiva.jpg",
+    "fotos/CSR.jpg",
+    "fotos/Daniels.jpg",
+    "fotos/Defante.jpg",
+    "fotos/DMenor11.jpg",
+    "fotos/Fir3zera.jpg",
+    "fotos/Fnx.jpg",
+    "fotos/gragolandia2.jpg",
+    "fotos/Gratis150ml.jpg",
+    "fotos/Hastaad.jpg",
+    "fotos/Hayshii.jpg",
+    "fotos/hudisonamorim.jpg",
+    "fotos/IShowSpeed.jpg",
+    "fotos/JeanMago.jpg",
+    "fotos/jovirone.jpg",
+    "fotos/kami.jpg",
+    "fotos/Kant.jpg",
+    "fotos/Kenzy.jpg",
+    "fotos/Kinechan.jpg",
+    "fotos/Krikor.jpg",
+    "fotos/Lffreitas.jpg",
+    "fotos/Liminha.jpg",
+    "fotos/Loud Mi.jpg",
+    "fotos/Loud Voltan.jpg",
+    "fotos/Luba.jpg",
+    "fotos/Maitê.jpg",
+    "fotos/Mch.jpg",
+    "fotos/mucalol.jpg",
+    "fotos/nicklink.jpg",
+    "fotos/Nicole diretora.jpg",
+    "fotos/NineXT.jpg",
+    "fotos/Ninja Poderosos.jpg",
+    "fotos/Ninja.jpg",
+    "fotos/Okina.jpg",
+    "fotos/Paivinha.jpg",
+    "fotos/Patife.jpg",
+    "fotos/PATO PAPAO.jpg",
+    "fotos/Patriota.jpg",
+    "fotos/pijack.jpg",
+    "fotos/Pulga.jpg",
+    "fotos/Rakin.jpg",
+    "fotos/Rbiana.jpg",
+    "fotos/Seven.jpg",
+    "fotos/Skipinho.jpg",
+    "fotos/Snopey.jpg",
+    "fotos/Souzasoul.jpg",
+    "fotos/Tecnosh.jpg",
+    "fotos/Thurzin.jpg",
+    "fotos/TonyBOY.jpg",
+    "fotos/VelhoVamp.jpg",
+    "fotos/VikingofSouth.jpg",
+    "fotos/WendelLira.jpg",
+    "fotos/XandãoOGOD.jpg",
+    "fotos/YasmimYassini.jpg",
+    "fotos/yayahuz.jpg",
+    "fotos/Yetz.jpg",
+    "fotos/yulla.jpg",
+    ];
 
-// The Google API key that you obtained from the Google Cloud Console
-var apiKey = 'AIzaSyCc8H8P-QWg9eSZHnRDaqfQGtCLRF3fQqw';
+    
+    var img = document.getElementById("random-img");
+    img.src = "fotos/4lan.jpg"
+  
+    let intervalId = setInterval(function trocarImagem() {
+  
+      var indice = Math.floor(Math.random() * imagens.length);
+      img.src = imagens[indice];
 
-// The ID of the folder containing the images you want to use
-var folderId = '1BjktplYnb9jdWkMCmr8auB6TDCpiVlUq';
-
-// The MIME type of the images you want to use (in this case, JPEG)
-var mimeType = 'image/jpeg';
-
-// A variable to store the URL of the randomly selected image
-var randomImageUrl = '';
-
-// Load the Google API Client Library for JavaScript
-gapi.load('client:auth2', function () {
-
-    // Initialize the Google API Client Library for JavaScript
-    gapi.client.init({
-        apiKey: apiKey,
-        clientId: clientId,
-        scope: 'https://www.googleapis.com/auth/drive.readonly'
-    }).then(function () {
-
-        // Authenticate the user with Google Sign-In
-        return gapi.auth2.getAuthInstance().signIn();
-
-    }).then(function () {
-
-        // Create a new Google Picker object
-        var picker = new google.picker.PickerBuilder()
-            .addView(new google.picker.DocsView(google.picker.ViewId.FOLDERS)
-                .setSelectFolderEnabled(false)
-                .setParent(folderId))
-            .addView(new google.picker.DocsView(google.picker.ViewId.DOCS_IMAGES)
-                .setMimeTypes(mimeType)
-                .setParent(folderId))
-            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-            .setOAuthToken(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token)
-            .setDeveloperKey(apiKey)
-            .setCallback(function (data) {
-
-                if (data.action == google.picker.Action.PICKED) {
-
-                    // Select a random image from the list of selected images
-                    var images = data.docs;
-                    var randomIndex = Math.floor(Math.random() * images.length);
-                    randomImageUrl = images[randomIndex].url;
-
-                    // Use the selected image for your application
-                    // ...
-
-                }
-            })
-            .build();
-
-        // Show the Google Picker dialog
-        picker.setVisible(true);
-
-    }).catch(function (error) {
-        console.error(error);
-    });
-
-});
-let url = URL.createObjectURL(randomImageUrl)
-
-var img = document.createElement("img")
-
-img.src = url
-
-var container = document.getElementById('imagem-container');
-
-container.appendChild(img);
+    }, 2000);
+  
+  
+  
