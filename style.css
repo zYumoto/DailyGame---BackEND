@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #202020;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cabeçalho {
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+fieldset .campo{
+    float: bottom;
+    padding: 30px;
+}
+
+.campo label{
+    margin: 0.2em;
+    color: #e5e5e5;
+    display:block;
+    padding-left: 0;
+    font-size: 200%;
+}
+
+.campo input[type="text"] {
+    padding: 0.2em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0 0 0 0.2);
+    height: 50px;
+    width: 400px;
+    border-radius: 25px;
+}
+
+.foto {
+    width: 500px;
+    padding: 30px;
+}
+
+.quatrolan {
+    position: absolute;
+    clip: rect(0);
+  }
