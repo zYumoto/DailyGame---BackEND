@@ -175,6 +175,7 @@ function enviar(){
     document.querySelector('.errado').style.display = "none";
     document.getElementById("enviar").style.display = "block";
     document.querySelector('.certo').style.display = "none";
+    count = 0;
   }
   
   
