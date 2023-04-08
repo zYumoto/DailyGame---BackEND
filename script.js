@@ -87,7 +87,7 @@ semFotos = "4lan.jpg"
 
 var jaFoi = [];
 
-var intervalId = setInterval(trocarImagem, 200000);
+var intervalId = setInterval(trocarImagem, 60000);
 
 var indice;
 
@@ -125,7 +125,7 @@ function enviar(){
           blurAtual = novoBlur;
   
           if (novoBlur < 0) {
-              blurAtual = 50;
+              blurAtual = 25;
           }
       img.style.filter = `blur(${novoBlur}px)`;
   }
@@ -168,5 +168,13 @@ function enviar(){
     }
   }
 
+  var intervalReset = setInterval(resetar, 60000);
+
+  function resetar(){
+    img.style.filter = `blur(25px)`;
+    document.querySelector('.errado').style.display = "none";
+    document.getElementById("enviar").style.display = "block";
+    document.querySelector('.certo').style.display = "none";
+  }
   
   

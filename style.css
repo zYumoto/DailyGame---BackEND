@@ -58,7 +58,7 @@ fieldset .campo{
   }
 
 .randomImg{
-    filter: blur(50px);
+    filter: blur(25px);
 }
 
 .certo {
